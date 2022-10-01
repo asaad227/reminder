@@ -4,12 +4,14 @@ function reminder(month, day){
     var userInput = new Date();
     userInput.setMonth(month, day)
     const datIn = document.querySelector(".userEntry")
-    datIn.innerHTML = `Reminder Set for: ${userInput}`;
+    
     var dif = Math.round((userInput - today)/1000/60/60/24);
     const daysLeft = document.querySelector(".daysLeft");
-    daysLeft.innerHTML = `${dif} day's left`
+    
     if (userInput > today) {
        alert (`Reminder Set`)
+       datIn.innerHTML = `Reminder Set for: ${userInput}`;
+       daysLeft.innerHTML = `${dif} day's left`;
     } else {
         alert("Invalid entry")
     }
